@@ -1,0 +1,64 @@
+<div class="login-page">
+  <section class="brand-panel">
+    <div class="brand-panel-inner">
+      <div class="brand">
+        <img class="brand-mark" src="tamatem-logo.svg" alt="" aria-hidden="true" />
+        <span class="brand-word">Game Store</span>
+      </div>
+
+      <h1>Your next favorite game is one tap away.</h1>
+      <p class="tagline">Swords, potions, shields and more — sign in to browse the full catalog and check out in seconds.</p>
+
+      <div class="floaties" aria-hidden="true">
+        <span class="floaty f1"><mat-icon>sports_esports</mat-icon></span>
+        <span class="floaty f2"><mat-icon>shield</mat-icon></span>
+        <span class="floaty f3"><mat-icon>auto_awesome</mat-icon></span>
+        <span class="floaty f4"><mat-icon>diamond</mat-icon></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="form-panel">
+    <div class="form-card">
+      <h2>Sign in</h2>
+      <p class="form-sub">Welcome back — enter your credentials to continue.</p>
+
+      <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Username</mat-label>
+          <input matInput name="username" [(ngModel)]="username" required autocomplete="username" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            type="password"
+            name="password"
+            [(ngModel)]="password"
+            required
+            autocomplete="current-password"
+          />
+        </mat-form-field>
+
+        @if (errorMessage()) {
+          <p class="error">{{ errorMessage() }}</p>
+        }
+
+        <button
+          mat-flat-button
+          color="primary"
+          class="full-width submit-btn"
+          type="submit"
+          [disabled]="loginForm.invalid || loading()"
+        >
+          @if (loading()) {
+            <mat-spinner diameter="20"></mat-spinner>
+          } @else {
+            Sign in
+          }
+        </button>
+      </form>
+    </div>
+  </section>
+</div>

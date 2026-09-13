@@ -1,0 +1,94 @@
+.page {
+  padding: 28px 32px 40px;
+  max-width: 620px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+
+.back-link:hover {
+  color: var(--brand-navy);
+}
+
+.back-link mat-icon {
+  font-size: 18px;
+  height: 18px;
+  width: 18px;
+}
+
+.detail-card {
+  border-radius: 16px !important;
+  overflow: hidden;
+}
+
+.cover {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cover mat-icon {
+  color: #fff;
+  font-size: 72px;
+  height: 72px;
+  width: 72px;
+  opacity: 0.92;
+}
+
+.location-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(62, 78, 198, 0.12);
+  color: #3e4ec6;
+  margin-top: 16px;
+}
+
+.location-badge.location-jo {
+  background: rgba(195, 0, 30, 0.1);
+  color: var(--brand-red);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--brand-navy);
+  margin: 12px 0;
+}
+
+.description {
+  color: var(--text-muted);
+  margin: 0 0 18px;
+  line-height: 1.55;
+}
+
+.price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--brand-green-dark);
+  margin: 0 0 22px;
+}
+
+.error {
+  color: var(--brand-red);
+  margin: 0 0 14px;
+}
+
+button[mat-flat-button] mat-icon {
+  margin-right: 6px;
+  vertical-align: middle;
+}

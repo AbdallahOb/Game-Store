@@ -1,0 +1,48 @@
+/* ---------------------------------------------------------------------
+   Design tokens, in the spirit of tamatem.co's brand: a deep navy shell,
+   a tomato red for identity/accents, and a green for primary actions —
+   paired with a rounded display face for headings (Baloo 2) echoing
+   their bold, playful wordmark treatment.
+   --------------------------------------------------------------------- */
+:root {
+  --brand-navy: #000430;
+  --brand-navy-light: #12173f;
+  --brand-red: #c3001e;
+  --brand-red-dark: #8f0016;
+  --brand-green: #058d69;
+  --brand-green-dark: #046e53;
+  --brand-gold: #d99a2b;
+
+  --bg: #f3f4f9;
+  --surface: #ffffff;
+  --border: #e2e4f0;
+  --text: #12143a;
+  --text-muted: #5b5f79;
+
+  --font-display: 'Baloo 2', 'Roboto', sans-serif;
+  --font-body: 'Mada', 'Roboto', "Helvetica Neue", sans-serif;
+}
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text);
+  color-scheme: light;
+}
+
+h1, h2, h3, h4, .brand-font {
+  font-family: var(--font-display);
+}
+
+/* Pill-shaped primary actions, matching tamatem.co's rounded CTA buttons */
+.mat-mdc-unelevated-button.mat-primary {
+  --mdc-filled-button-container-shape: 24px;
+  --mdc-filled-button-container-color: var(--brand-green);
+  letter-spacing: .02em;
+}
+.mat-mdc-unelevated-button.mat-primary:hover {
+  --mdc-filled-button-container-color: var(--brand-green-dark);
+}

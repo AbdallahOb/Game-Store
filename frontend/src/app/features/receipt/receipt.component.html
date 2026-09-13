@@ -1,0 +1,36 @@
+<div class="page">
+  @if (order(); as order) {
+    <mat-card class="receipt-card">
+      <div class="success-badge">
+        <mat-icon>check_circle</mat-icon>
+      </div>
+      <mat-card-header>
+        <mat-card-title>Purchase confirmed</mat-card-title>
+        <mat-card-subtitle>Order #{{ order.id }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <dl>
+          <dt>Item</dt>
+          <dd class="title">{{ order.product_title }}</dd>
+
+          <dt>Price</dt>
+          <dd>${{ order.price }}</dd>
+
+          <dt>Location</dt>
+          <dd>{{ order.location === 'JO' ? 'Jordan' : 'Saudi Arabia' }}</dd>
+
+          <dt>Purchased by</dt>
+          <dd>{{ order.buyer }}</dd>
+
+          <dt>Date</dt>
+          <dd>{{ order.created_at | date: 'medium' }}</dd>
+        </dl>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-flat-button color="primary" (click)="backToProducts()">Back to Store</button>
+      </mat-card-actions>
+    </mat-card>
+  } @else if (notFound()) {
+    <p>Receipt not found.</p>
+  }
+</div>

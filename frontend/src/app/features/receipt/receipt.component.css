@@ -1,0 +1,60 @@
+.page {
+  padding: 40px 24px;
+  max-width: 480px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.receipt-card {
+  border-radius: 16px !important;
+  text-align: center;
+  padding-top: 8px;
+}
+
+.success-badge {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.success-badge mat-icon {
+  font-size: 52px;
+  height: 52px;
+  width: 52px;
+  color: var(--brand-green);
+}
+
+mat-card-title {
+  font-family: var(--font-display) !important;
+  color: var(--brand-navy);
+}
+
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 16px;
+  row-gap: 10px;
+  text-align: left;
+  margin: 8px 0 4px;
+}
+
+dt {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+dd {
+  margin: 0;
+}
+
+dd.title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--brand-navy);
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 16px !important;
+}

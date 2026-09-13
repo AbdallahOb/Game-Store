@@ -1,0 +1,48 @@
+<div class="page">
+  <header class="page-header">
+    <div>
+      <h1>Store</h1>
+      <p class="subtitle">{{ totalCount() }} digital items, handpicked for JO &amp; SA</p>
+    </div>
+    <mat-button-toggle-group
+      [value]="locationFilter()"
+      (change)="onLocationChange($event.value)"
+      aria-label="Filter by location"
+    >
+      <mat-button-toggle [value]="null">All</mat-button-toggle>
+      <mat-button-toggle value="JO">Jordan</mat-button-toggle>
+      <mat-button-toggle value="SA">Saudi Arabia</mat-button-toggle>
+    </mat-button-toggle-group>
+  </header>
+
+  <div class="grid">
+    @for (product of products(); track product.id) {
+      <mat-card class="product-card" (click)="openProduct(product.id)">
+        <div class="cover" [style.background]="coverColorFor(product.id)">
+          <mat-icon>{{ coverIconFor(product.id) }}</mat-icon>
+        </div>
+        <mat-card-content>
+          <p class="title">{{ product.title }}</p>
+          <p class="description">{{ product.description }}</p>
+          <div class="meta-row">
+            <span class="price">${{ product.price }}</span>
+            <span class="location-badge" [class.location-jo]="product.location === 'JO'">{{ product.location }}</span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    } @empty {
+      @if (!loading()) {
+        <p>No products found.</p>
+      }
+    }
+  </div>
+
+  <mat-paginator
+    [length]="totalCount()"
+    [pageIndex]="pageIndex()"
+    [pageSize]="pageSize()"
+    [pageSizeOptions]="[5, 10, 20, 50]"
+    (page)="onPageChange($event)"
+  >
+  </mat-paginator>
+</div>

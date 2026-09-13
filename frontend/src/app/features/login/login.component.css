@@ -1,0 +1,157 @@
+.login-page {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ---- brand panel ---- */
+.brand-panel {
+  flex: 1 1 46%;
+  background: linear-gradient(160deg, var(--brand-navy) 0%, #1a1f57 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 48px;
+  box-sizing: border-box;
+}
+
+.brand-panel-inner {
+  max-width: 420px;
+  position: relative;
+  z-index: 1;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.brand-mark {
+  width: 34px;
+  height: auto;
+}
+
+.brand-word {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.brand-panel h1 {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 16px;
+  text-wrap: balance;
+}
+
+.tagline {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 34ch;
+}
+
+/* In normal flow (not absolutely positioned) so they can never overlap the
+   headline/tagline regardless of how wide the panel ends up being. */
+.floaties {
+  display: flex;
+  gap: 14px;
+  margin-top: 36px;
+  padding-top: 6px;
+}
+
+.floaty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.floaty mat-icon {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.f1 { background: rgba(195, 0, 30, 0.32); animation-delay: 0s; }
+.f2 { background: rgba(5, 141, 105, 0.34); animation-delay: 1.2s; }
+.f3 { background: rgba(217, 154, 43, 0.34); animation-delay: 2.1s; }
+.f4 { background: rgba(62, 78, 198, 0.34); animation-delay: 0.6s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floaty { animation: none; }
+}
+
+/* ---- form panel ---- */
+.form-panel {
+  flex: 1 1 54%;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+.form-card {
+  width: 100%;
+  max-width: 360px;
+}
+
+.form-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--brand-navy);
+  margin: 0 0 4px;
+}
+
+.form-sub {
+  color: var(--text-muted);
+  margin: 0 0 24px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.submit-btn {
+  margin-top: 4px;
+  height: 44px;
+}
+
+.error {
+  color: var(--brand-red);
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 860px) {
+  .login-page {
+    flex-direction: column;
+  }
+  .brand-panel {
+    flex: 0 0 auto;
+    padding: 32px 24px 44px;
+  }
+  .brand-panel h1 {
+    font-size: 1.6rem;
+  }
+  .floaties { display: none; }
+  .form-panel {
+    flex: 1 1 auto;
+    padding: 32px 20px 48px;
+  }
+}

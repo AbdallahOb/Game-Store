@@ -1,0 +1,32 @@
+<aside class="sidebar">
+  <div class="brand">
+    <img class="brand-mark" src="tamatem-logo.svg" alt="" aria-hidden="true" />
+    <span class="brand-word">Game Store</span>
+  </div>
+
+  <nav class="nav">
+    <p class="nav-label">Browse</p>
+    <a routerLink="/products" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <mat-icon>sports_esports</mat-icon>
+      <span class="label">All Games</span>
+    </a>
+
+    <p class="nav-label">Docs</p>
+    <a routerLink="/important" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <mat-icon>priority_high</mat-icon>
+      <span class="label">Important</span>
+    </a>
+  </nav>
+
+  <div class="spacer"></div>
+
+  <div class="account">
+    @if (authService.username(); as username) {
+      <div class="avatar" aria-hidden="true">{{ username.charAt(0).toUpperCase() }}</div>
+      <span class="username">{{ username }}</span>
+    }
+    <button class="logout" (click)="logout()" aria-label="Log out">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </div>
+</aside>

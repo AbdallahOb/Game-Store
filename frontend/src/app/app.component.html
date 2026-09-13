@@ -1,0 +1,10 @@
+@if (authService.isAuthenticated() && !isLoginPage()) {
+  <div class="shell">
+    <app-sidebar></app-sidebar>
+    <main class="shell-content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+} @else {
+  <router-outlet></router-outlet>
+}

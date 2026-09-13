@@ -1,0 +1,29 @@
+<div class="page">
+  <a routerLink="/products" class="back-link">
+    <mat-icon>arrow_back</mat-icon>
+    Back to Store
+  </a>
+
+  @if (product(); as product) {
+    <mat-card class="detail-card">
+      <div class="cover" [style.background]="coverColorFor(product.id)">
+        <mat-icon>{{ coverIconFor(product.id) }}</mat-icon>
+      </div>
+      <mat-card-content>
+        <span class="location-badge" [class.location-jo]="product.location === 'JO'">{{ product.location === 'JO' ? 'Jordan' : 'Saudi Arabia' }}</span>
+        <p class="title">{{ product.title }}</p>
+        <p class="description">{{ product.description }}</p>
+        <p class="price">${{ product.price }}</p>
+
+        @if (errorMessage()) {
+          <p class="error">{{ errorMessage() }}</p>
+        }
+
+        <button mat-flat-button color="primary" (click)="buy()" [disabled]="buying()">
+          <mat-icon>shopping_cart</mat-icon>
+          {{ buying() ? 'Processing…' : 'Buy now' }}
+        </button>
+      </mat-card-content>
+    </mat-card>
+  }
+</div>

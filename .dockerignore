@@ -1,0 +1,10 @@
+# Used when building the backend image (build context is the repo root).
+.git
+.env
+backend/.venv
+backend/**/__pycache__
+backend/*.sqlite3
+frontend/node_modules
+frontend/dist
+frontend/.angular
+docs
